@@ -1,6 +1,6 @@
 These instructions are about installing Airflow on a Ubuntu server (not using Docker). We will be using Python 3. Python 2 is sunsetting.
 
-Airflow version 1.10.12 will be used not Airflow 2.0 yet.
+Airflow version 1.10.14 will be used not Airflow 2.0 yet.
 
 ## Airflow Python Module Installation
 
@@ -14,7 +14,7 @@ sudo apt-get install -y python3-pip
 #### Next install Airflow and other Python modules we need
 
 ```
-sudo pip3 install apache-airflow SQLAlchemy==1.3.23 Flask-SQLAlchemy==2.4.4
+sudo pip3 install apache-airflow==1.10.14 SQLAlchemy==1.3.23 Flask-SQLAlchemy==2.4.4
 sudo pip3 install cryptography psycopg2-binary boto3 botocore 
 ```
 
@@ -184,7 +184,7 @@ Visit your Airflow Web UI and we should see the DAGs from the repo. Some will ha
 
 ## Set AIRFLOW_HOME environment variable in ~/.bashrc (/var/lib/airflow/.bashrc)
 
-Once you switch to airflow user (sudo su airflow), edit ~/.bashrc or /var/lib/airflow/.bashrc and append the following lines to the end of the file:
+Once you switch to *airflow* user (sudo su airflow), edit ~/.bashrc or /var/lib/airflow/.bashrc and append the following lines to the end of the file:
 
 ```
 AIRFLOW_HOME=/var/lib/airflow
