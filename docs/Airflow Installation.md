@@ -27,12 +27,6 @@ sudo groupadd airflow
 sudo useradd -s /bin/bash airflow -g airflow -d /var/lib/airflow -m
 ```
 
-To change the user to airflow, run the following. Running "bash" will make your life easier:
-```
-sudo su airflow
-```
-
-
 ## Local Postgres Installation to store Airflow related info (DAGs, Tasks, Variables, Connections and so on)
 
 By default, Airflow will be launced with a SQLite database which is a single thread. Will change this to use a more performant database such as Postgres later.
