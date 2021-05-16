@@ -184,8 +184,11 @@ Visit your Airflow Web UI and we should see the DAGs from the repo. Some will ha
 
 ## Set AIRFLOW_HOME environment variable in ~/.bashrc (/var/lib/airflow/.bashrc)
 
-Once you switch to *airflow* user (sudo su airflow), edit ~/.bashrc or /var/lib/airflow/.bashrc and append the following lines to the end of the file:
-
+Once you switch to *airflow* user (sudo su airflow), execute the bashrc file first,
+```
+ubuntu@ip-172-31-54-137:~$ vi ~/.bashcr
+```
+and append the following lines to the end of the file:
 ```
 AIRFLOW_HOME=/var/lib/airflow
 export AIRFLOW_HOME
