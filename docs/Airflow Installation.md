@@ -215,10 +215,11 @@ sudo pip3 install flask_bcrypt
 sudo pip3 install -U Werkzeug==0.16.0
 ```
 
-Next update "webserver" section. of airflow.cfg and make the following two changes:
+Next update "webserver" section (not "api" section) of airflow.cfg and make the following change:
 
-- Set "authenticate" to True
 - Set auth_backend to airflow.contrib.auth.backends.password_auth
+
+In the previous version of airflow, setting "authenticate" to True under "webserver" section was required but it doesn't look like so any more
 
 Before:
 
@@ -235,7 +236,6 @@ After:
 ```
 [webserver]
 ...
-authenticate = True
 auth_backend = airflow.contrib.auth.backends.password_auth
 ```
 
