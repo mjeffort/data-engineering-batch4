@@ -219,7 +219,7 @@ Next update "webserver" section (not "api" section) of airflow.cfg and make the 
 
 - Set auth_backend to airflow.contrib.auth.backends.password_auth
 
-In the previous version of airflow, setting "authenticate" to True under "webserver" section was required but it doesn't look like so any more
+In the previous version of airflow, setting "authenticate" to True under "webserver" section was required but it doesn't look like so any more (but make sure authenticate is set to true in the same section).
 
 Before:
 
@@ -237,6 +237,8 @@ After:
 [webserver]
 ...
 auth_backend = airflow.contrib.auth.backends.password_auth
+...
+authenticate = True
 ```
 
 Now time to create a user for Airflow login. Open a new file in /var/lib/airflow/createUser.py and copy&paste the following code:
