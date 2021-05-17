@@ -186,7 +186,7 @@ Visit your Airflow Web UI and we should see the DAGs from the repo. Some will ha
 
 Once you switch to *airflow* user (sudo su airflow), execute the bashrc file first,
 ```
-airflow@ip-172-31-54-137:~$ vi ~/.bashcr
+airflow@ip-172-31-54-137:~$ vi ~/.bashrc
 ```
 and append the following lines to the end of the file:
 ```
