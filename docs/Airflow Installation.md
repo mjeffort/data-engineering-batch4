@@ -218,6 +218,9 @@ sudo pip3 install -U Werkzeug==0.16.0
 Next update "webserver" section (not "api" section) of airflow.cfg and make the following change:
 
 - Set auth_backend to airflow.contrib.auth.backends.password_auth
+```
+vi /var/lib/airflow/airflow.cfg
+```
 
 In the previous version of airflow, setting "authenticate" to True under "webserver" section was required but it doesn't look like so any more (but make sure authenticate is set to true in the same section).
 
