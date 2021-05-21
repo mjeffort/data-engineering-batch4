@@ -52,7 +52,7 @@ def load(**context):
 
 dag_second_assignment = DAG(
     dag_id = 'second_assignment_v4',
-    start_date = datetime(2021,2,4), # 날짜가 미래인 경우 실행이 안됨
+    start_date = datetime(2021,5,20), # 날짜가 미래인 경우 실행이 안됨
     schedule_interval = '0 2 * * *',  # 적당히 조절
     max_active_runs = 1,
     default_args = {
