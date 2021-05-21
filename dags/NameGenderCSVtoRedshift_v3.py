@@ -49,15 +49,14 @@ def load(**context):
     lines = context["task_instance"].xcom_pull(key="return_value", task_ids="transform")
     lines = iter(lines)
     next(lines)
-    sql = "BEGIN; DELETE FROM {schema}.{table};"
+    sql = "BEGIN; DELETE FROM {schema}.{table};".format(schema=schema, table=table)
     for line in lines:
         if line != "":
             (name, gender) = line.split(",")
             print(name, "-", gender)
-            sql += """INSERT INTO {schema}.{table} VALUES ('{name}', '{gender}');""".format(name=name, gender=gender)
+            sql += """INSERT INTO {schema}.{table} VALUES ('{name}', '{gender}');""".format(schema=schema, table=table, name=name, gender=gender)
     sql += "END;"
 
-    sql = sql.format(schema=schema, table=table)
     logging.info(sql)
     cur.execute(sql)
 
