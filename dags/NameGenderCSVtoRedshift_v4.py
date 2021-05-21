@@ -44,7 +44,7 @@ def load(**context):
         if line != "":
             (name, gender) = line.split(",")
             print(name, "-", gender)
-            sql += """INSERT INTO raw_data.name_gender VALUES ('{name}', '{gender}');""".format(name=name, gender=gender)
+            sql += """INSERT INTO {schema}.{table} VALUES ('{name}', '{gender}');""".format(name=name, gender=gender)
     sql += "END;"
     logging.info(sql)
     cur.execute(sql)
