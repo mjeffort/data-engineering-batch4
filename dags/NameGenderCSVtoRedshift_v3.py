@@ -10,8 +10,8 @@ import psycopg2
 
 def get_Redshift_connection():
     host = "learnde.cduaw970ssvt.ap-northeast-2.redshift.amazonaws.com"
-    redshift_user = ""  # 본인 ID 사용
-    redshift_pass = ""  # 본인 Password 사용
+    redshift_user = "mjk3026"  # 본인 ID 사용
+    redshift_pass = "Mjk3026!1"  # 본인 Password 사용
     port = 5439
     dbname = "prod"
     conn = psycopg2.connect("dbname={dbname} user={user} host={host} password={password} port={port}".format(
@@ -63,7 +63,7 @@ def load(**context):
 
 dag_second_assignment = DAG(
     dag_id = 'second_assignment_v3',
-    start_date = datetime(2021,2,4), # 날짜가 미래인 경우 실행이 안됨
+    start_date = datetime(2021,5,20), # 날짜가 미래인 경우 실행이 안됨
     schedule_interval = '0 2 * * *',  # 적당히 조절
     max_active_runs = 1,
     default_args = {
@@ -94,7 +94,7 @@ load = PythonOperator(
     task_id = 'load',
     python_callable = load,
     params = {
-        'schema': 'raw_data',
+        'schema': 'mjk3026',
         'table': 'name_gender'
     },
     provide_context=True,

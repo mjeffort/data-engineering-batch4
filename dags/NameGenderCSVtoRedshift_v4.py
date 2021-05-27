@@ -83,7 +83,7 @@ load = PythonOperator(
     task_id = 'load',
     python_callable = load,
     params = {
-        'schema': 'raw_data',
+        'schema': 'mjk3026',
         'table': 'name_gender'
     },
     provide_context=True,
